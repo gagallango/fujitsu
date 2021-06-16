@@ -2,9 +2,16 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
+import Button from "react-bootstrap/Button";
 import SLot from "./Slot";
 import "./Main.css";
-import { faArrowLeft, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faUser,
+  faSortDown,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Main extends Component {
@@ -87,17 +94,28 @@ export default class Main extends Component {
       console.error(Error);
     }
   }
+
+  handleCancel = (e) => {
+    e.preventDefault();
+    this.props.history.goBack();
+  };
+
   render() {
     console.log(this.state.slots);
+    const { showing } = this.state;
+
     return (
       <div>
-        <div className="menu-slot">
+        <header className="menu-slot">
           <Container>
             <Row>
               <Col>
                 <Row>
                   <Col xs="2">
-                    <FontAwesomeIcon icon={faArrowLeft} />
+                    <FontAwesomeIcon
+                      onClick={this.handleCancel}
+                      icon={faArrowLeft}
+                    />
                   </Col>
                   <Col xs="1">
                     <FontAwesomeIcon icon={faUser} />
@@ -108,20 +126,48 @@ export default class Main extends Component {
                 </Row>
                 <Row>
                   <Col xs="4">
-                    <p>Expedientes(0)</p>
+                    <p className="expedientes">Expedientes(0)</p>
                   </Col>
                   <Col xs="4">
-                    <p>Documentos({this.state.counter})</p>
+                    <p className="documentos">
+                      Documentos({this.state.counter})
+                    </p>
                   </Col>
                 </Row>
               </Col>
-              <Col></Col>
+              <Col xs="4">
+                <Row>
+                  <Col>
+                    <Form className="search-form">
+                      <FormControl
+                        type="text"
+                        placeholder="Search"
+                        className="mr-sm-2"
+                      />
+                      <Button variant="outline-success">Search</Button>
+                    </Form>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs="9" className="tool-desplegar">
+                    <p>Desplegar todo</p>
+                    <div className="sort-down">
+                      <FontAwesomeIcon
+                        icon={faSortDown}
+                        onClick={() => this.setState({ showing: !showing })}
+                      />
+                    </div>
+                  </Col>
+                </Row>
+              </Col>
             </Row>
           </Container>
-        </div>
-        <div>
-          <SLot slots={this.state.slots} />
-        </div>
+        </header>
+        {showing ? (
+          <div>
+            <SLot slots={this.state.slots} />
+          </div>
+        ) : null}
       </div>
     );
   }

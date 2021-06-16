@@ -4,7 +4,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Slot.css";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStar,
+  faFileImport,
+  faShareAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class SLot extends Component {
@@ -17,18 +21,16 @@ export default class SLot extends Component {
   }
 
   renderList = () => {
-    const { showing } = this.state;
-
     if (this.props.slots.length > 0) {
       return this.props.slots.map((item, key) => (
         <Container className="main-slot" key={item.id}>
           <Row className="rect-slot">
             <Col>
               <Row>
-                <Col xs xs="2">
+                <Col className="general" xs="2">
                   <FontAwesomeIcon icon={faStar} />
                 </Col>
-                <Col xs>
+                <Col className="general" xs>
                   <div className="slot-content">
                     <p className="slot-document-name">{item.title}</p>
                     <p className="slot-document-type">{item.extra}</p>
@@ -36,13 +38,29 @@ export default class SLot extends Component {
                 </Col>
               </Row>
             </Col>
-            <Col>{item.description}</Col>
-            <Col>
-              <Col xs xs="2">
+            <Col className="general slot-description">{item.description}</Col>
+            <Col className="general">
+              <Col className="completed" xs="6">
                 {item.slotState}
               </Col>
-              <Col xs>{item.number}</Col>
-              <Col xs>{item.docs}</Col>
+              {item.number ? (
+                <Col className="number" xs="2">
+                  <div className="number_div">
+                    <FontAwesomeIcon icon={faShareAlt} />
+                  </div>
+                  {item.number}
+                </Col>
+              ) : null}
+
+              {item.docs ? (
+                <Col className="docs" xs="2">
+                  <div className="number_div">
+                    <FontAwesomeIcon icon={faFileImport} />
+                  </div>
+                  {item.docs}
+                </Col>
+              ) : null}
+
               {/* <div>
                 <button onClick={() => this.setState({ showing: !showing })}>
                   toggle
@@ -58,7 +76,6 @@ export default class SLot extends Component {
   };
 
   render() {
-    console.log("Aqui props", this.props.slots.title);
     return <>{this.renderList()}</>;
   }
 }

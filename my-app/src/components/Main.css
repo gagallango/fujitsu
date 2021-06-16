@@ -1,9 +1,40 @@
 .nav-title {
   text-align: left;
+  font-weight: 500;
+}
+
+.search-form {
+  display: flex;
+}
+
+.tool-desplegar {
+  display: flex;
+}
+
+.sort-down {
+  padding: 0 5px;
 }
 
 .menu-slot {
-  padding: 20px 80px;
-  margin: 25px;
-  box-shadow: 0 0px 0px 0 rgb(0 0 0 / 19%), 0 1px 0px 0 rgb(0 0 0 / 19%);
+  padding: 20px 80px 0 80px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  display: block;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+
+.expedientes {
+  font-size: 15px;
+}
+p.expedientes:hover {
+  color: #003aeb;
+}
+
+.documentos {
+  font-size: 15px;
+}
+p.documentos:hover {
+  color: #003aeb;
 }
