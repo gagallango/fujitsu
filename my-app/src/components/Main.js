@@ -134,7 +134,7 @@ export default class Main extends Component {
                   <Col xs="4">
                     <p className="expedientes">Expedientes(0)</p>
                   </Col>
-                  <Col xs="4">
+                  <Col xs="1">
                     <p className="documentos">
                       Documentos({this.state.counter})
                     </p>

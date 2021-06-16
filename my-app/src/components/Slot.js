@@ -72,7 +72,14 @@ export default class SLot extends Component {
               </div>
             </Col>
           </Row>
-          {showing ? (
+
+          {item.origin &&
+          item.evaluation &&
+          item.layout &&
+          item.createdDate &&
+          item.restrictions &&
+          item.tags &&
+          showing ? (
             <Row className="rectangle-slot">
               <Col>
                 <Row>
