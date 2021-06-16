@@ -1,0 +1,18 @@
+.rect-slot {
+  padding: 20px 80px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  margin: 25px;
+}
+
+.slot-content {
+  text-align: left;
+}
+
+.slot-document-name {
+  font-weight: 700;
+}
+
+.slot-document-type {
+  font-size: 12px;
+  color: #a3a3a3;
+}
