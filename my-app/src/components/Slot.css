@@ -9,6 +9,22 @@
   align-items: center;
 }
 
+.general_two {
+  font-size: 9px;
+  color: #858585;
+  margin-bottom: 0;
+}
+
+.general_three {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.sub-slot {
+  text-align: left;
+}
+
 .completed {
   color: green;
   font-size: 14px;
@@ -19,6 +35,12 @@
   font-size: 12px;
   color: #003aeb;
   display: flex;
+}
+
+.rectangle-slot {
+  background-color: #f0f0f0;
+  padding: 20px 80px;
+  margin: 0 25px;
 }
 
 .docs {

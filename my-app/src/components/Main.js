@@ -38,6 +38,13 @@ export default class Main extends Component {
           slotState: "Completado",
           number: "+99",
           docs: "5",
+          origin:
+            "Departamento de origen de este documento, puede doblar las líneas que sean necesarias",
+          evaluation: "Evaluación",
+          layout: "Nombre plantilla",
+          createdDate: "00/00/0000 00:00",
+          restrictions: "3 restricciones",
+          tags: ["Etiqueta 1", "Etiqueta 2", "Etiqueta 3"],
         },
         {
           id: 2,
@@ -101,7 +108,6 @@ export default class Main extends Component {
   };
 
   render() {
-    console.log(this.state.slots);
     const { showing } = this.state;
 
     return (
