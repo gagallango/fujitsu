@@ -1,5 +1,11 @@
 import React, { Component } from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import SLot from "./Slot";
+import "./Main.css";
+import { faArrowLeft, faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Main extends Component {
   constructor() {
@@ -85,7 +91,37 @@ export default class Main extends Component {
     console.log(this.state.slots);
     return (
       <div>
-        <SLot slots={this.state.slots} />
+        <div className="menu-slot">
+          <Container>
+            <Row>
+              <Col>
+                <Row>
+                  <Col xs="2">
+                    <FontAwesomeIcon icon={faArrowLeft} />
+                  </Col>
+                  <Col xs="1">
+                    <FontAwesomeIcon icon={faUser} />
+                  </Col>
+                  <Col xs="6">
+                    <p className="nav-title">Nombre de Persona Física</p>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs="4">
+                    <p>Expedientes(0)</p>
+                  </Col>
+                  <Col xs="4">
+                    <p>Documentos({this.state.counter})</p>
+                  </Col>
+                </Row>
+              </Col>
+              <Col></Col>
+            </Row>
+          </Container>
+        </div>
+        <div>
+          <SLot slots={this.state.slots} />
+        </div>
       </div>
     );
   }
