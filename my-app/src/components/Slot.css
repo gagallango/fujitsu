@@ -21,6 +21,14 @@
   margin-bottom: 0;
 }
 
+.star_slot {
+  color: #ccc;
+}
+
+.slot_link {
+  text-decoration: none;
+}
+
 .sub-slot {
   text-align: left;
 }
@@ -33,7 +41,7 @@
 
 .number {
   font-size: 12px;
-  color: #003aeb;
+  color: #1966c2;
   display: flex;
 }
 
@@ -45,7 +53,7 @@
 
 .docs {
   font-size: 12px;
-  color: #003aeb;
+  color: #1966c2;
   display: flex;
 }
 

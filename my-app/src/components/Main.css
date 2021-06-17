@@ -1,21 +1,47 @@
-.nav-title {
-  text-align: left;
-  font-weight: 500;
-}
-
-.search-form {
+.search_form {
   display: flex;
 }
 
-.tool-desplegar {
-  display: flex;
+.docType_doc_slot {
+  color: #1966c2;
 }
 
-.sort-down {
+.docType_speaker_slot {
+  color: #903ac2;
+}
+
+.search_row {
+  width: inherit;
+  margin-bottom: 5px;
+}
+
+.color_arrow {
+  color: #1966c2;
+}
+
+.title_desplegar {
+  display: flex;
+  font-weight: 600;
+}
+
+.tool_desplegar {
+  display: flex;
+  color: #1966c2;
+}
+
+.nav_title {
+  padding-left: 5px;
+}
+
+.sort_down {
   padding: 0 5px;
 }
 
-.menu-slot {
+.user_down {
+  color: #1966c2;
+}
+
+.menu_slot {
   padding: 20px 80px 0 80px;
   position: sticky;
   top: 0;
@@ -29,12 +55,12 @@
   font-size: 15px;
 }
 p.expedientes:hover {
-  color: #003aeb;
+  color: #1966c2;
 }
 
 .documentos {
   font-size: 15px;
 }
 p.documentos:hover {
-  color: #003aeb;
+  color: #1966c2;
 }

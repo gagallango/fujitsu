@@ -31,8 +31,11 @@ export default class SLot extends Component {
           <Row className="rect-slot">
             <Col>
               <Row>
-                <Col className="general" xs="2">
+                <Col className="general star_slot" xs="2">
                   <FontAwesomeIcon icon={faStar} />
+                </Col>
+                <Col className="general" xs="2">
+                  {item.docType}
                 </Col>
                 <Col className="general" xs>
                   <div className="slot-content">
@@ -52,7 +55,9 @@ export default class SLot extends Component {
                   <div className="number_div">
                     <FontAwesomeIcon icon={faShareAlt} />
                   </div>
-                  {item.number}
+                  <a href="#" className="slot_link">
+                    {item.number}
+                  </a>
                 </Col>
               ) : null}
 
@@ -61,15 +66,19 @@ export default class SLot extends Component {
                   <div className="number_div">
                     <FontAwesomeIcon icon={faFileImport} />
                   </div>
-                  {item.docs}
+                  <a href="#" className="slot_link">
+                    {item.docs}
+                  </a>
                 </Col>
               ) : null}
-              <div className="sort-down">
-                <FontAwesomeIcon
-                  icon={faSortDown}
-                  onClick={() => this.setState({ showing: !showing })}
-                />
-              </div>
+              <Col>
+                <div className="sort-down">
+                  <FontAwesomeIcon
+                    icon={faSortDown}
+                    onClick={() => this.setState({ showing: !showing })}
+                  />
+                </div>
+              </Col>
             </Col>
           </Row>
 
@@ -83,8 +92,8 @@ export default class SLot extends Component {
             <Row className="rectangle-slot">
               <Col>
                 <Row>
-                  <Col xs="4" className="sub-slot">
-                    <FontAwesomeIcon icon={faFileAlt} />
+                  <Col xs="4" className="sub-slot star_slot">
+                    <FontAwesomeIcon size="6x" icon={faFileAlt} />
                   </Col>
                   <Col xs="8" className="sub-slot">
                     <p className="general_two">Origen:</p>

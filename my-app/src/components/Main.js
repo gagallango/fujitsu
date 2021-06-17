@@ -11,6 +11,8 @@ import {
   faArrowLeft,
   faUser,
   faSortDown,
+  faFileInvoice,
+  faVolumeUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -34,6 +36,12 @@ export default class Main extends Component {
           id: 1,
           title: "Nombre del documento",
           extra: "Documento texto - PDF",
+          docType: (
+            <FontAwesomeIcon
+              className="docType_doc_slot"
+              icon={faFileInvoice}
+            />
+          ),
           description: "A - 1 | Descripción del documento",
           slotState: "Completado",
           number: "+99",
@@ -50,6 +58,12 @@ export default class Main extends Component {
           id: 2,
           title: "Nombre del documento",
           extra: "Documento audio - MP3",
+          docType: (
+            <FontAwesomeIcon
+              className="docType_speaker_slot"
+              icon={faVolumeUp}
+            />
+          ),
           description: "",
           slotState: "Completado",
           number: "",
@@ -59,6 +73,12 @@ export default class Main extends Component {
           id: 3,
           title: "Nombre del documento",
           extra: "Documento texto - PDF",
+          docType: (
+            <FontAwesomeIcon
+              className="docType_doc_slot"
+              icon={faFileInvoice}
+            />
+          ),
           description: "A - 1 | Descripción del documento",
           slotState: "Completado",
           number: "",
@@ -68,6 +88,12 @@ export default class Main extends Component {
           id: 4,
           title: "Nombre del documento",
           extra: "Documento texto - PDF",
+          docType: (
+            <FontAwesomeIcon
+              className="docType_doc_slot"
+              icon={faFileInvoice}
+            />
+          ),
           description: "A - 1 | Descripción del documento",
           slotState: "Completado",
           number: "8",
@@ -77,6 +103,12 @@ export default class Main extends Component {
           id: 5,
           title: "Nombre del documento",
           extra: "Documento texto - PDF",
+          docType: (
+            <FontAwesomeIcon
+              className="docType_doc_slot"
+              icon={faFileInvoice}
+            />
+          ),
           description: "A - 1 | Descripción del documento",
           slotState: "Completado",
           number: "12",
@@ -86,6 +118,42 @@ export default class Main extends Component {
           id: 6,
           title: "Nombre del documento",
           extra: "Documento texto - PDF",
+          docType: (
+            <FontAwesomeIcon
+              className="docType_doc_slot"
+              icon={faFileInvoice}
+            />
+          ),
+          description: "A - 1 | Descripción del documento",
+          slotState: "Completado",
+          number: "",
+          docs: "5",
+        },
+        {
+          id: 7,
+          title: "Nombre del documento",
+          extra: "Documento texto - PDF",
+          docType: (
+            <FontAwesomeIcon
+              className="docType_doc_slot"
+              icon={faFileInvoice}
+            />
+          ),
+          description: "A - 1 | Descripción del documento",
+          slotState: "Completado",
+          number: "",
+          docs: "5",
+        },
+        {
+          id: 8,
+          title: "Nombre del documento",
+          extra: "Documento texto - PDF",
+          docType: (
+            <FontAwesomeIcon
+              className="docType_doc_slot"
+              icon={faFileInvoice}
+            />
+          ),
           description: "A - 1 | Descripción del documento",
           slotState: "Completado",
           number: "",
@@ -112,26 +180,26 @@ export default class Main extends Component {
 
     return (
       <div>
-        <header className="menu-slot">
+        <header className="menu_slot">
           <Container>
             <Row>
               <Col>
                 <Row>
-                  <Col xs="2">
+                  <Col className="color_arrow" xs="2">
                     <FontAwesomeIcon
                       onClick={this.handleCancel}
                       icon={faArrowLeft}
                     />
                   </Col>
-                  <Col xs="1">
-                    <FontAwesomeIcon icon={faUser} />
-                  </Col>
-                  <Col xs="6">
-                    <p className="nav-title">Nombre de Persona Física</p>
+                  <Col xs="4" className="title_desplegar">
+                    <div className="user_down">
+                      <FontAwesomeIcon icon={faUser} />
+                    </div>
+                    <p className="nav_title">Nombre de Persona Física</p>
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs="4">
+                  <Col xs="3">
                     <p className="expedientes">Expedientes(0)</p>
                   </Col>
                   <Col xs="1">
@@ -142,22 +210,23 @@ export default class Main extends Component {
                 </Row>
               </Col>
               <Col xs="4">
-                <Row>
+                <Row className="search_row">
                   <Col>
-                    <Form className="search-form">
+                    <Form className="search_form">
                       <FormControl
                         type="text"
                         placeholder="Search"
                         className="mr-sm-2"
                       />
-                      <Button variant="outline-success">Search</Button>
+                      <Button className="btn btn-primary">Search</Button>
                     </Form>
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs="9" className="tool-desplegar">
-                    <p>Desplegar todo</p>
-                    <div className="sort-down">
+                  <Col></Col>
+                  <Col className="tool_desplegar">
+                    Desplegar todo{" "}
+                    <div className="sort_down">
                       <FontAwesomeIcon
                         icon={faSortDown}
                         onClick={() => this.setState({ showing: !showing })}
