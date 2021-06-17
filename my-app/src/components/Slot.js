@@ -12,6 +12,9 @@ import {
   faFileAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactTooltip from "react-tooltip";
+
+const MAX_LENGTH = 25;
 
 export default class SLot extends Component {
   constructor(props) {
@@ -20,6 +23,10 @@ export default class SLot extends Component {
       slots: [],
       showing: true,
     };
+  }
+
+  showTooltip() {
+    <ReactTooltip id="button-tooltip">Simple tooltip</ReactTooltip>;
   }
 
   renderList = () => {
@@ -71,7 +78,7 @@ export default class SLot extends Component {
                   </a>
                 </Col>
               ) : null}
-              <Col xs="6">
+              <Col xs>
                 <div className="sort-down">
                   <FontAwesomeIcon
                     icon={faSortDown}
@@ -122,7 +129,22 @@ export default class SLot extends Component {
                     <p className="general_three">{item.restrictions}</p>
                     <br />
                     <p className="general_two">Etiquetas del documento:</p>
-                    <p className="general_three">{item.tags}</p>
+                    {item.tags.length > MAX_LENGTH ? (
+                      <div
+                        data-tip
+                        data-for="registerTip"
+                        className="general_three"
+                      >
+                        {`${item.tags.substring(0, MAX_LENGTH)}...`}
+                        <ReactTooltip
+                          id="registerTip"
+                          place="top"
+                          effect="solid"
+                        >
+                          {item.tags}
+                        </ReactTooltip>
+                      </div>
+                    ) : null}
                   </Col>
                 </Row>
               </Col>

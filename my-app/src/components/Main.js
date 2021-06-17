@@ -52,17 +52,7 @@ export default class Main extends Component {
           layout: "Nombre plantilla",
           createdDate: "00/00/0000 00:00",
           restrictions: "3 restricciones",
-          tags: [
-            "Etiqueta 1",
-            "Etiqueta 2",
-            "Etiqueta 3",
-            "Etiqueta 4",
-            "Etiqueta 5",
-            "Etiqueta 6",
-            "Etiqueta 7",
-            "Etiqueta 8",
-            "Etiqueta 9",
-          ],
+          tags: "Etiqueta 1, Etiqueta 2, Etiqueta 3, Etiqueta 4, Etiqueta 5, Etiqueta 6, Etiqueta 7, Etiqueta 8",
         },
         {
           id: 2,
@@ -195,7 +185,7 @@ export default class Main extends Component {
             <Row>
               <Col>
                 <Row>
-                  <Col className="color_arrow" xs="2">
+                  <Col className="color_arrow" xs="1">
                     <FontAwesomeIcon
                       onClick={this.handleCancel}
                       icon={faArrowLeft}
@@ -209,7 +199,7 @@ export default class Main extends Component {
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs="3">
+                  <Col xs="2">
                     <p className="expedientes">Expedientes(4)</p>
                   </Col>
                   <Col xs="1">
