@@ -10,9 +10,9 @@ import "./Main.css";
 import {
   faArrowLeft,
   faUser,
-  faSortDown,
   faFileInvoice,
   faVolumeUp,
+  faAngleDoubleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -180,64 +180,62 @@ export default class Main extends Component {
 
     return (
       <div>
-        <header className="menu_slot">
-          <Container>
-            <Row>
-              <Col>
-                <Row>
-                  <Col className="color_arrow" xs="1">
-                    <FontAwesomeIcon
-                      onClick={this.handleCancel}
-                      icon={faArrowLeft}
+        <Container className="menu_slot">
+          <Row>
+            <Col>
+              <Row>
+                <Col className="color_arrow" xs="1">
+                  <FontAwesomeIcon
+                    onClick={this.handleCancel}
+                    icon={faArrowLeft}
+                  />
+                </Col>
+                <Col xs="6" className="title_desplegar">
+                  <div className="user_down">
+                    <FontAwesomeIcon icon={faUser} />
+                  </div>
+                  <p className="nav_title">Nombre de Persona Física</p>
+                </Col>
+              </Row>
+              <Row className="info_row">
+                <Col xs="2">
+                  <p className="expedientes">Expedientes(4)</p>
+                </Col>
+                <Col xs="1">
+                  <p className="documentos">Documentos({this.state.counter})</p>
+                </Col>
+              </Row>
+            </Col>
+            <Col xs="4">
+              <Row className="search_row">
+                <Col>
+                  <Form className="search_form">
+                    <FormControl
+                      type="text"
+                      placeholder="Buscar por nombre"
+                      className="mr-sm-2"
                     />
-                  </Col>
-                  <Col xs="6" className="title_desplegar">
-                    <div className="user_down">
-                      <FontAwesomeIcon icon={faUser} />
-                    </div>
-                    <p className="nav_title">Nombre de Persona Física</p>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs="2">
-                    <p className="expedientes">Expedientes(4)</p>
-                  </Col>
-                  <Col xs="1">
-                    <p className="documentos">
-                      Documentos({this.state.counter})
-                    </p>
-                  </Col>
-                </Row>
-              </Col>
-              <Col xs="4">
-                <Row className="search_row">
-                  <Col>
-                    <Form className="search_form">
-                      <FormControl
-                        type="text"
-                        placeholder="Search"
-                        className="mr-sm-2"
-                      />
-                      <Button className="btn btn-primary">Search</Button>
-                    </Form>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col></Col>
-                  <Col className="tool_desplegar">
-                    Desplegar todo{" "}
-                    <div className="sort_down">
-                      <FontAwesomeIcon
-                        icon={faSortDown}
-                        onClick={() => this.setState({ showing: !showing })}
-                      />
-                    </div>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
-        </header>
+                    <Button className="btn btn-primary">Search</Button>
+                  </Form>
+                </Col>
+              </Row>
+              <Row className="info_row">
+                <Col></Col>
+                <Col className="tool_desplegar">
+                  Desplegar todo{" "}
+                  <div className="sort_down">
+                    <FontAwesomeIcon
+                      icon={faAngleDoubleDown}
+                      size="xs"
+                      onClick={() => this.setState({ showing: !showing })}
+                      className="rotate"
+                    />
+                  </div>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
         {showing ? (
           <div>
             <SLot slots={this.state.slots} />

@@ -43,7 +43,7 @@
 }
 
 .menu_slot {
-  padding: 20px 80px 0 80px;
+  padding: 20px 20px 0 20px;
   position: sticky;
   top: 0;
   background: #fff;
@@ -64,4 +64,19 @@ p.expedientes:hover {
 }
 p.documentos:hover {
   color: #1966c2;
+}
+
+.rotate {
+  -moz-transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.rotate.down {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.info_row {
+  margin-top: 25px;
 }

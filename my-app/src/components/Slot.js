@@ -8,8 +8,9 @@ import {
   faStar,
   faFileImport,
   faShareAlt,
-  faSortDown,
   faFileAlt,
+  faAngleDoubleDown,
+  faDownload,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactTooltip from "react-tooltip";
@@ -47,7 +48,9 @@ export default class SLot extends Component {
                 <Col className="general" xs>
                   <div className="slot-content">
                     <p className="slot-document-name">{item.title}</p>
-                    <p className="slot-document-type">{item.extra}</p>
+                    <p className="slot-document-type">
+                      {item.extra} <FontAwesomeIcon icon={faDownload} />{" "}
+                    </p>
                   </div>
                 </Col>
               </Row>
@@ -78,14 +81,15 @@ export default class SLot extends Component {
                   </a>
                 </Col>
               ) : null}
-              <Col xs>
-                <div className="sort-down">
-                  <FontAwesomeIcon
-                    icon={faSortDown}
-                    onClick={() => this.setState({ showing: !showing })}
-                  />
-                </div>
-              </Col>
+            </Col>
+            <Col xs="1">
+              <div className="sort-down">
+                <FontAwesomeIcon
+                  icon={faAngleDoubleDown}
+                  size="xs"
+                  onClick={() => this.setState({ showing: !showing })}
+                />
+              </div>
             </Col>
           </Row>
 
