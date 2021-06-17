@@ -26,10 +26,6 @@ export default class SLot extends Component {
     };
   }
 
-  showTooltip() {
-    <ReactTooltip id="button-tooltip">Simple tooltip</ReactTooltip>;
-  }
-
   renderList = () => {
     const { showing } = this.state;
 
