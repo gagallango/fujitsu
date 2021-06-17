@@ -52,7 +52,17 @@ export default class Main extends Component {
           layout: "Nombre plantilla",
           createdDate: "00/00/0000 00:00",
           restrictions: "3 restricciones",
-          tags: ["Etiqueta 1", "Etiqueta 2", "Etiqueta 3"],
+          tags: [
+            "Etiqueta 1",
+            "Etiqueta 2",
+            "Etiqueta 3",
+            "Etiqueta 4",
+            "Etiqueta 5",
+            "Etiqueta 6",
+            "Etiqueta 7",
+            "Etiqueta 8",
+            "Etiqueta 9",
+          ],
         },
         {
           id: 2,
@@ -191,7 +201,7 @@ export default class Main extends Component {
                       icon={faArrowLeft}
                     />
                   </Col>
-                  <Col xs="4" className="title_desplegar">
+                  <Col xs="6" className="title_desplegar">
                     <div className="user_down">
                       <FontAwesomeIcon icon={faUser} />
                     </div>
@@ -200,7 +210,7 @@ export default class Main extends Component {
                 </Row>
                 <Row>
                   <Col xs="3">
-                    <p className="expedientes">Expedientes(0)</p>
+                    <p className="expedientes">Expedientes(4)</p>
                   </Col>
                   <Col xs="1">
                     <p className="documentos">

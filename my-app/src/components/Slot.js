@@ -71,7 +71,7 @@ export default class SLot extends Component {
                   </a>
                 </Col>
               ) : null}
-              <Col>
+              <Col xs="6">
                 <div className="sort-down">
                   <FontAwesomeIcon
                     icon={faSortDown}
