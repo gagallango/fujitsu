@@ -129,36 +129,36 @@ export default class Main extends Component {
           number: "",
           docs: "5",
         },
-        {
-          id: 7,
-          title: "Nombre del documento",
-          extra: "Documento texto - PDF",
-          docType: (
-            <FontAwesomeIcon
-              className="docType_doc_slot"
-              icon={faFileInvoice}
-            />
-          ),
-          description: "A - 1 | Descripción del documento",
-          slotState: "Completado",
-          number: "",
-          docs: "5",
-        },
-        {
-          id: 8,
-          title: "Nombre del documento",
-          extra: "Documento texto - PDF",
-          docType: (
-            <FontAwesomeIcon
-              className="docType_doc_slot"
-              icon={faFileInvoice}
-            />
-          ),
-          description: "A - 1 | Descripción del documento",
-          slotState: "Completado",
-          number: "",
-          docs: "5",
-        },
+        // {
+        //   id: 7,
+        //   title: "Nombre del documento",
+        //   extra: "Documento texto - PDF",
+        //   docType: (
+        //     <FontAwesomeIcon
+        //       className="docType_doc_slot"
+        //       icon={faFileInvoice}
+        //     />
+        //   ),
+        //   description: "A - 1 | Descripción del documento",
+        //   slotState: "Completado",
+        //   number: "",
+        //   docs: "5",
+        // },
+        // {
+        //   id: 8,
+        //   title: "Nombre del documento",
+        //   extra: "Documento texto - PDF",
+        //   docType: (
+        //     <FontAwesomeIcon
+        //       className="docType_doc_slot"
+        //       icon={faFileInvoice}
+        //     />
+        //   ),
+        //   description: "A - 1 | Descripción del documento",
+        //   slotState: "Completado",
+        //   number: "",
+        //   docs: "5",
+        // },
       ];
       this.setState({
         slots: slots,
